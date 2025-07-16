@@ -1,0 +1,6 @@
+2025-07-16 11:33:23.821 EAT [18398] LOG:  starting PostgreSQL 17.0 on arm-unknown-linux-androideabi, compiled by Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262), 32-bit
+2025-07-16 11:33:23.823 EAT [18398] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-07-16 11:33:23.826 EAT [18398] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2025-07-16 11:33:23.838 EAT [18403] LOG:  database system was shut down at 2025-07-16 11:32:15 EAT
+2025-07-16 11:33:23.856 EAT [18398] LOG:  database system is ready to accept connections
+2025-07-16 11:33:52.425 EAT [18420] FATAL:  database "u0_a194" does not exist

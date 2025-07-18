@@ -1,6 +1,7 @@
-2025-07-16 11:33:23.821 EAT [18398] LOG:  starting PostgreSQL 17.0 on arm-unknown-linux-androideabi, compiled by Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262), 32-bit
-2025-07-16 11:33:23.823 EAT [18398] LOG:  listening on IPv4 address "127.0.0.1", port 5432
-2025-07-16 11:33:23.826 EAT [18398] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
-2025-07-16 11:33:23.838 EAT [18403] LOG:  database system was shut down at 2025-07-16 11:32:15 EAT
-2025-07-16 11:33:23.856 EAT [18398] LOG:  database system is ready to accept connections
-2025-07-16 11:33:52.425 EAT [18420] FATAL:  database "u0_a194" does not exist
+2025-07-17 07:07:36.668 EAT [27124] LOG:  starting PostgreSQL 17.0 on arm-unknown-linux-androideabi, compiled by Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262), 32-bit
+2025-07-17 07:07:36.674 EAT [27124] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-07-17 07:07:36.677 EAT [27124] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2025-07-17 07:07:36.690 EAT [27129] LOG:  database system was shut down at 2025-07-17 07:06:47 EAT
+2025-07-17 07:07:36.711 EAT [27124] LOG:  database system is ready to accept connections
+2025-07-17 07:12:36.767 EAT [27127] LOG:  checkpoint starting: time
+2025-07-17 07:14:18.782 EAT [27127] LOG:  checkpoint complete: wrote 1014 buffers (6.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=101.627 s, sync=0.346 s, total=102.016 s; sync files=373, longest=0.003 s, average=0.001 s; distance=4733 kB, estimate=4733 kB; lsn=0/198CCA0, redo lsn=0/198CC10

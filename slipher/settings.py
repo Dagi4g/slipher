@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     #my app
+    'slipher_video',
     #django defult apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -78,6 +79,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'slipher_db',
+        'USER' : 'slipher_user',
+        'PASSWORD' : 'the_sky-dragon',
+        'HOST' : '127.0.0.1',
+        'PORT': '5432',
+
     }
 }
 

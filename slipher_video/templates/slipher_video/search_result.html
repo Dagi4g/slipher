@@ -1,0 +1,13 @@
+{% extends "slipher_video/home.html" %}
+
+{% block content %}
+
+{% for video in videos %}
+<a href="{% url 'slipher_video:watch_video' video_id=video.video_id %}">
+	<img src="https://img.youtube.com/vi/{{ video.video_id }}/0.jpg" width="220"><p><strong>{{ video.title }}</strong></p><p>watch video</p></a>
+	<hr>
+
+
+{% endfor %}
+
+{% endblock content %}

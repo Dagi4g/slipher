@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">                                
+    <meta name="viewport" content="width=device-width,
+ initial-scale=1.0">                                      
+    <title>Slipher</title>                                
+</head>
+<body>
+	<h2> slipher youtube filter </h2>
+	<form method="get" action="{% url 'slipher_video:search' %}">
+		<input type='search' name='q' placeholder="search video">
+		<button type='summit' name>search</button>
+	</form>
+{% block content %}{% endblock content %}
+
+</body>
+</html>

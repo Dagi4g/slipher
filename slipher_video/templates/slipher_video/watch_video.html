@@ -1,0 +1,39 @@
+{% extends 'slipher_video/home.html' %}
+{% block content %}
+  <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 0 auto; /* Centers the video */
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align: center;">Watch This Video</h2>
+
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/{{video_id}}"
+      title="YouTube video"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</body>
+</html>
+{% endblock content %}

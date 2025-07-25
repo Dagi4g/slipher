@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     #my app
     'slipher_video',
+    'user',
     #django defult apps
     'django.contrib.admin',
     'django.contrib.auth',

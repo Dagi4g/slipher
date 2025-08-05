@@ -19,8 +19,6 @@ class FilterVideo:
         
         return video_rank
 
-
-
     def _title_match(self,title):
         """score the similarity of the title to the query from zero to 4 and return the float."""
         return fuzz.token_set_ratio(title,self.query)/20

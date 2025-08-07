@@ -1,4 +1,4 @@
-asgiref==3.9.1
+aspgiref==3.9.1
 cachetools==5.5.2
 certifi==2025.7.14
 cffi==1.17.1
@@ -17,6 +17,7 @@ httplib2==0.22.0
 idna==3.10
 isodate==0.7.2
 oauthlib==3.3.1
+pillow==11.3.0
 proto-plus==1.26.1
 protobuf==6.31.1
 psycopg2-binary==2.9.10

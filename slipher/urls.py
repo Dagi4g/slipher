@@ -19,5 +19,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('',include("slipher_video.urls")),
+    path('accounts/', include('allauth.urls')),  # Include allauth URLs
     path('admin/', admin.site.urls),
 ]

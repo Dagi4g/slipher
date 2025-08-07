@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Default authentication backend
+    'allauth.account.auth_backends.AuthenticationBackend',  # Django Allauth backend
+]
+
 
 # Application definition
 
@@ -34,6 +39,16 @@ INSTALLED_APPS = [
     #my app
     'slipher_video',
     'user',
+    # django-allauth apps
+    'allauth',
+    'allauth.account',
+    # django-allauth social account providers
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount.providers.apple',
+    'allauth.socialaccount.providers.microsoft',
     #django defult apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,7 +66,21 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Middleware for django-allauth
+    'allauth.account.middleware.AccountMiddleware',
 ]
+
+SOCIALACCOUNT_PROVDERS = {
+    'google' : {
+        'APP' : {
+            'client_id' : '123',
+            'secret' : '456',
+            'key' : ''
+        }
+
+    }
+}
 
 ROOT_URLCONF = 'slipher.urls'
 
@@ -65,6 +94,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #this is needed for authentication of the user through third party id providers and used with django-allauth.
+                'django.template.context_processors.request',
             ],
         },
     },

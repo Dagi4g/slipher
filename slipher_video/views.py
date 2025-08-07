@@ -1,6 +1,9 @@
 from django.shortcuts import render,HttpResponse
 from django.template import loader
 from httplib2 import ServerNotFoundError
+from django.contrib.auth.decorators import login_required
+
+
 from . import youtube_search
 
 

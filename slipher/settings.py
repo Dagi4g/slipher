@@ -139,6 +139,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = 'user.CustomUser'  # Use the custom user model
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For development, use console backend
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/

@@ -6,14 +6,45 @@
  initial-scale=1.0">                                      
     <title>Slipher</title>                                
 </head>
-<body>
+	<body>
 	<h2> slipher : learn faster </h2>
 	<form method="get" action="{% url 'slipher_video:search' %}">
 		<input type='search' name='q' placeholder="search video">
 		<button type='submit' name>search</button>
 
+		<input type="radio" name="type" id="playlist" value="playlist">
+		<label for="playlist">Playlist</label>
+		<input type="radio" name="type" id="video" value="video" checked>
+		<label for="video">Video</label>
+		<input type="radio" name="type" id="channel" value="channel">
+		<label for="channel">Channel</label>
+		<input type="radio" name="type" id="all" value="all">
+		<label for="all">All</label>
+	
+		<div id="video-length" class="options" style="display: none;">
+			<label for="video-length">Video Length:</label>
+			<select name="video_length" id="video-length-select" action="{% url 'slipher_video:search' %}">
+				<option value="short">Short</option>
+				<option value="medium">Medium</option>
+				<option value="long">Long</option>
+				<button type="submit">Search</button>
+			</select>		</div>
 	</form>
-{% block content %}{% endblock content %}
+	<script>
+		document.querySelectorAll('input[name="type"]').forEach((elem) => {
+			elem.addEventListener("change", function(event) {
+				const videoLengthDiv = document.getElementById("video-length");
+				if (event.target.value === "video") {
+					videoLengthDiv.style.display = "block";
+				} else {
+					videoLengthDiv.style.display = "none";
+				}
+			});
+		});
+	</script>
 
+
+{% block content %}{% endblock content %}
 </body>
+
 </html>

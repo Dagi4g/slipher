@@ -1,0 +1,15 @@
+{% extends 'slipher_video/base.html' %}
+
+{% block content %}
+    <h2>playlist results</h2>
+    <ul>
+        {% for playlist in playlists %}
+            <li>
+                <a href="{% url 'slipher_video:watch_playlist' playlist.id %}">{{ playlist.title }}</a>
+                <img src="https://img.youtube.com/pl/{{ playlist.video_id }}/0.jpg" width="220"><p><strong>{{ playlist.video_title }}</strong></p><p>watch video</p></a>
+                <p>{{ playlist.description }}</p>
+            </li>
+        {% empty %}
+            <li>No playlists found.</li>
+        {% endfor %}
+    </ul>

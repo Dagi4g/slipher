@@ -9,16 +9,27 @@ DEVELOPER_KEY = 'AIzaSyBS85UF62S4K1dp59pdSHnIFPX_Yhov1P4'
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
 
-def youtube_search(args):
+def video_search(query, video_length='medium'):
     youtube = build(YOUTUBE_API_SERVICE_NAME,YOUTUBE_API_VERSION,developerKey=DEVELOPER_KEY)
-    search_result = youtube.search().list(q=args,
+    search_result = youtube.search().list(q=query,
                                  part = 'snippet',
                                  videoCategoryId=27,
                                  type='video',
-                                 videoDuration='medium',
+                                 videoDuration=video_length,
                                 maxResults=50).execute()
-    test = FilterVideo(search_result,args)
-    return test.build()
+    videos = FilterVideo(search_result,args)
+    return videos.build()
+
+def playlist_search(query):
+    youtube = build(YOUTUBE_API_SERVICE_NAME,YOUTUBE_API_VERSION,developerKey=DEVELOPER_KEY)
+    search_result = youtube.search().list(q=query,
+                                 part = 'snippet',
+                                 type='playlist',
+                                 maxResults=50).execute()
+    playlists = FilterVideo(search_result,args)
+    return playlists.build()
+
+
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser()

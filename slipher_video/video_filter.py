@@ -28,5 +28,23 @@ class FilterVideo:
         #for k,v in video_rank.items():
 
 
+class FilterPlaylist():
+    def __init__(self, youtube_api, query):
+        self.youtube_api = youtube_api
+        self.query = query
 
+    def build(self):
+        """Filter and rank playlists based on the search query."""
+        playlists = []
+        for playlist in self.youtube_api.get("items"):
+            playlists.append({
+                "playlist_id": playlist["id"]["playlistId"],
+                "title": playlist["snippet"]["title"],
+                "score": self._title_match(playlist["snippet"]["title"])
+            })
+        playlists.sort(key=lambda data: data['score'], reverse=True)
+        return playlists
 
+    def _title_match(self, title: str) -> float:
+        """Score the similarity of the title to the query from zero to 4 and return the float."""
+        return fuzz.token_set_ratio(title, self.query) / 20

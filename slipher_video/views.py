@@ -12,12 +12,12 @@ def home(request):
     return render(request,'slipher_video/home.html')
 
 def search(request):
-    video_type = request.GET.get('type','')
+    content_type = request.GET.get('type','')
 
-    if video_type == 'video':
+    if content_type == 'video':
         try:
             query = request.GET.get('q','')
-            video_length = request.GET.get('video_length','medium')
+            video_length = request.GET.get('video_length','')
             videos = video_search(query,video_length=video_length)
         except ServerNotFoundError:
             return HttpResponse("there must be a problem with the internet : check if you are connected to wifi or the data is on!")
@@ -25,7 +25,7 @@ def search(request):
         context = {'videos':videos}
         return HttpResponse(template.render(context,request))
 
-    elif video_type == 'playlist':
+    elif content_type == 'playlist':
         try :
             query = request.GET.get('q','')
             playlists = playlist_search(query)
@@ -35,9 +35,9 @@ def search(request):
         context = {'playlists':playlists}
         return HttpResponse(template.render(context,request))
     
-    elif video_type == 'channel':
+    elif content_type == 'channel':
         return HttpResponse("channel search is not implemented yet")
-    elif video_type == 'all':
+    elif content_type == 'all':
         return HttpResponse("all search is not implemented yet")
 
 def watch_video(request,video_id):

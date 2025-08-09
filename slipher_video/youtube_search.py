@@ -17,7 +17,7 @@ def video_search(query, video_length='medium'):
                                  type='video',
                                  videoDuration=video_length,
                                 maxResults=50).execute()
-    videos = FilterVideo(search_result,args)
+    videos = FilterVideo(search_result, query=query)
     return videos.build()
 
 def playlist_search(query):
@@ -26,7 +26,7 @@ def playlist_search(query):
                                  part = 'snippet',
                                  type='playlist',
                                  maxResults=50).execute()
-    playlists = FilterVideo(search_result,args)
+    playlists = FilterVideo(search_result,query)
     return playlists.build()
 
 
